@@ -27,3 +27,32 @@ hesaplaBtn.addEventListener('click', (e) => {
   // console.log(taksit);
   sonuclariGoster();
 });
+const sonuclariGoster = () => {
+    const sonuclar = document.querySelector('.sonuclar');
+  
+    sonuclar.innerHTML = `
+    <h2 class="mt-3 text-warning">Kredi Bilgileri</h2>
+    <table class="table table-bordered border-warning  mt-4">
+     <tbody>
+      <tr>
+        <th>Kredi Miktari</th>
+        <td>${tutar.value} ₺</td>
+        <th>Kredi Tipi</th>
+        <td>${select.value}</td>
+      </tr>
+      <tr>
+        <th>Vade</th>
+        <td>${vade.value}</td>
+        <th>Faiz Orani</th>
+        <td>${oran}</td>
+      </tr>
+      <tr>
+        <th>Toplam Tutar</th>
+        <td>${(taksit * vade.value).toFixed(2)} ₺</td>
+        <th>Taksit Tutari</th>
+        <td>${taksit.toFixed(2)} ₺</td>
+      </tr>
+    </tbody>
+  </table>
+    `;
+  };
